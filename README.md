@@ -67,11 +67,7 @@ python3 synthesize.py --text "YOUR_DESIRED_TEXT" --restore_step 900000 --mode si
 
 ## Datasets
 
-The supported datasets are
-
-- [LJSpeech](https://keithito.com/LJ-Speech-Dataset/): a single-speaker English dataset consists of 13100 short audio clips of a female speaker reading passages from 7 non-fiction books, approximately 24 hours in total.
-- [AISHELL-3](http://www.aishelltech.com/aishell_3): a Mandarin TTS dataset with 218 male and female speakers, roughly 85 hours in total.
-- [LibriTTS](https://research.google/tools/datasets/libri-tts/): a multi-speaker English dataset containing 585 hours of speech by 2456 speakers.
+-Need to use KSS Dataset : https://www.kaggle.com/datasets/bryanpark/korean-single-speaker-speech-dataset
 
 
 ## Preprocessing
@@ -114,10 +110,7 @@ The notes below describe only the parts that differ from the original README.
 
 ### Dataset Placement
 
-FastSpeech2/
-├── KSS/
-│ ├── *.wav
-│ └── transcript.v.1.4.txt
+FastSpeech2/ KSS/ wav / transcript.v.1.4.txt
 
 ### create label files of wav files
 use transcript.v.1.4. txt file to make label files of wav files
@@ -166,9 +159,6 @@ tensorboard --logdir output/log/LJSpeech
 to serve TensorBoard on your localhost.
 The loss curves, synthesized mel-spectrograms, and audios are shown.
 
-![](./img/tensorboard_loss.png)
-![](./img/tensorboard_spec.png)
-![](./img/tensorboard_audio.png)
 
 # Implementation Issues
 
